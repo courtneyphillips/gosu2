@@ -42,16 +42,16 @@ end
 
 class NyanCat
   def initialize(window)
-    @sprites = Gosu::Image::load_tiles(window, 'images/cat.png', 847/6, 87, false)
+    @sprites = Gosu::Image.new(window, 'images/teset.png', true)
     @x = 10
     @y = 200
-    @width = @sprites.first.width
-    @height = @sprites.first.height
+    @width = @sprites.width
+    @height = @sprites.height
   end
 
   def draw
-    sprite = @sprites[Gosu::milliseconds / 75 % @sprites.size]
-    sprite.draw(@x, @y, 1)
+    # sprite = @sprites[Gosu::milliseconds / 75 % @sprites.size]
+    @sprites.draw(@x, @y, 1)
   end
 
   def bumped_into?(object)
@@ -90,7 +90,7 @@ end
 class Avocado
   attr_accessor :x, :y, :width, :height
   def initialize(window)
-    @sprite = Gosu::Image.new(window, 'images/all_food.png', true)
+    @sprite = Gosu::Image.new(window, 'images/margarita.png', true)
     @x = 100
     @y = 200
     @width = @sprite.width
